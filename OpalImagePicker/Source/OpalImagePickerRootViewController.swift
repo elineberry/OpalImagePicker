@@ -275,7 +275,7 @@ open class OpalImagePickerRootViewController: UIViewController {
         }
     }
     
-    @objc func doneTapped() {
+    @objc open func doneTapped() {
         guard let imagePicker = navigationController as? OpalImagePickerController else { return }
         
         let indexPathsForSelectedItems = selectedIndexPaths
@@ -424,7 +424,7 @@ extension OpalImagePickerRootViewController: UICollectionViewDelegate {
     /// - Parameters:
     ///   - collectionView: the `UICollectionView`
     ///   - indexPath: the `IndexPath`
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? ImagePickerCollectionViewCell,
             let image = cell.imageView.image else { return }
         set(image: image, indexPath: indexPath, isExternal: collectionView == self.externalCollectionView)
